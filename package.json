@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/yaochuxia/duang#readme",
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-stylus": "^2.1.0"
   }
 }
