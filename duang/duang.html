@@ -4,30 +4,46 @@
 	<meta charset="UTF-8">
 	<title>duang tooltip气泡特效</title>
 	<link rel="stylesheet"type="text/css" href="../dist/css/duang.min.css" />
+	<script src="../js/jquery-1.8.3.min.js"></script>
 </head>
 <body>
-	<h1>用户的声音</h1>
-	<div class="sound_article">
-	    <div id="sound_1" class="sound">
-	        <a class="avator">
-	        	<img src="../images/user_1.jpg" alt="太扯淡" />
-	        	<h2>.◇﹏習慣ㄋ</h2>
-	        </a>
-	        <div class="sound_content">
-	        	<svg data-src="../img/bubble1.svg" width="200" height="100"></svg>
-	        	<p>哎呀，百度脑图真的好用啊，是吧，多多酱？</p>
-	        </div>
-		</div>
-	    <div id="sound_2" class="sound">
-	        <a class="avator">
-	        	<img src="../images/user_2.png" alt="太扯淡" />
-	        	<h2>.◇﹏習慣ㄋ</h2>
-	        </a>
-	        <div class="sound_content">
-	        	<svg data-src="../img/bubble1.svg" width="200" height="100"></svg>
-	        	<p>哎呀，百度脑图真的好用啊，是吧，多多酱？</p>
-	        </div>
+	<div class="container">
+		<div class="row">
+			<h2>用户的声音</h2>
+			<div class="sound_article">
+			    <div id="sound_1" class="sound">
+			        <a href="#" class="avator" data-title="哎呀，百度脑图真的好用啊，是吧，多多酱？">
+			        	<img src="../images/user_1.jpg" alt="太扯淡" />
+			        	<h5>.◇﹏習慣ㄋ</h5>
+			        </a>
+				</div>
+			    <div id="sound_2" class="sound">
+			        <a href="#" class="avator"  data-title="哎呀，百度脑图真的好用啊，是吧，多多酱？">
+			        	<img src="../images/user_2.png" alt="太扯淡" />
+			        	<h5>.◇﹏習慣ㄋ</h5>
+			        </a>
+				</div>
+			</div>	
+    	    <p class="sound_content"></p>
+
 		</div>
 	</div>	
+	<script>
+$(function(){
+	$('.sound_article .avator').hover(function(){
+		var title=$(this).attr('data-title');
+		console.log(title);
+		$('.sound_content').text(title);
+		var pos=$(this).offset().left;   //元素偏移位置
+		console.log(pos);
+		var dis=($('.sound_content').outerWidth()-$(this).outerWidth())/2;//sound_content宽减.avator的宽再除以2 
+		console.log(dis);
+		var l=pos-dis;
+		$('.sound_content').css({'left':l+'px'}).animate({'top':120,'opacity':1},300);
+	},function(){
+		$('.sound_content').animate({'top':0,'opacity':0},300);
+	})
+})
+	</script>
 </body>
 </html>
