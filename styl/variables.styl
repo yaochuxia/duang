@@ -2,6 +2,37 @@
 
 //## 对于颜色的全局使用
 
+$gray_base ?=             #000
+$gray_darker ?=           lighten($gray_base, 13.5%) // == #222 变浅
+$gray_dark ?=             lighten($gray_base, 20%) // == #333
+$gray ?=                  lighten($gray_base, 33.5%) // == #555
+$gray_light ?=            lighten($gray_base, 46.7%) // == #777
+$gray_lighter ?=          lighten($gray_base, 93.5%) // == #eee
+
+
+
 $body_bg ?=               #F0F0F0
+$text_color ?=            $gray_dark
+
+//全局超链接文本颜色
+$link_color ?=            $gray_dark
+$link_hover_color ?=      darken($link_color, 15%) // 变暗 
+$link_hover_decoration ?= underline 
+
 $orange ?=                #FF8C00
+
+
+// 文本字体及子号
+$font_family_serif ?=      "Helvetica Neue", Helvetica, Arial, sans-serif
+$font_size_base ?=         14px
+$font_size_large ?=        ceil($font_size_base * 1.25)// ~18px    ceil 大于等于（$font_size_base*1.25）返回与他最接近的整数
+$font_size_small ?=        ceil($font_size_base * 0.85) // ~12px
+
+//标题
+$font_size_h1 ?=           floor($font_size_base * 2.6) // ~36px
+$font_size_h2 ?=           floor($font_size_base * 2.15) // ~30px
+$font_size_h3 ?=           ceil($font_size_base * 1.7) // ~24px
+$font_size_h4 ?=           ceil($font_size_base * 1.25) // ~18px
+$font_size_h5 ?=           $font_size_base
+$font_size_h6 ?=           ceil($font_size_base * 0.85) // ~12px
 
